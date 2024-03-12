@@ -1,0 +1,44 @@
+
+APP_NAME="backend"
+APP_ENV="local"
+APP_DEBUG=true
+APP_PORT=":8083"
+APP_Timezone="Asia/Beijing"
+
+LogLevel = "DEBUG"
+
+[app]
+  key="zBqYyQrPNaIUsnRhsGtHLivjqiMjBVLS"
+  timezone="Asia/Shanghai"
+  debug=true
+  name="backend"
+
+
+[jwt]
+   max_refresh_time = 86400
+   expired_time = 120
+   debug_expire_time = 43200
+   expire_time = 21600
+
+[mysql]
+  database = "backend"
+  ip = "127.0.0.1:3319"
+  password = "superroot"
+  user = "superroot"
+
+[redis]
+  ip = "127.0.0.1"
+  port = 4344
+
+[token]
+  expired= 30 # 过期时间 30 天
+
+[paging]
+  url_query_order="order"
+  url_query_sort="sort"
+  url_query_per_page="perpage"
+  url_query_page="page"
+  perpage=10
+
+
+  
