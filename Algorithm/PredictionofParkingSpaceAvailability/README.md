@@ -1,4 +1,22 @@
+## 环境
+```shell
+python3 -m venv venv
+```
+
+```shell
+source venv/bin/activate
+```
+
+```shell
+pip install matplotlib
+```
+
+```shell
+pip install numpy
+```
 ## 时间序列预测算法
+
+
 
 
 ### 1.自回归积分滑动平均模型（ARIMA）

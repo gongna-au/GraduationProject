@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+      - name: python
+        image:  fieelina/pythonserver:latest
+        ports:
+        - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-service
+spec:
+  type: NodePort  # 指定Service类型为NodePort
+  ports:
+  - port: 5000
+    targetPort: 5000
+    # nodePort: 30007 # 可选: 可以指定nodePort，如果不指定，Kubernetes会自动为你分配一个端口
+  selector:
+    app: python
