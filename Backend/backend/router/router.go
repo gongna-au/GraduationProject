@@ -1,10 +1,9 @@
 package router
 
 import (
-	"backend/handler/action"
 	"backend/handler/login"
 	"backend/handler/parking"
-	"backend/handler/recommend"
+
 	"backend/handler/user"
 	"net/http"
 	"strings"
@@ -80,23 +79,6 @@ func RegisterAPIRoutes(g *gin.Engine) {
 		g2.POST("/common", signup.CommonUserSignupUsingPhone)
 	}
 
-	g3 := g.Group("/api/v1/recommend")
-	{
-		g3.POST("/browse", recommend.GetResourceByBrowse)
-		g3.POST("/collect", recommend.GetResourceByCollect)
-		g3.POST("/like", recommend.GetResourceByLike)
-		g3.POST("/click", recommend.GetResourceByClick)
-		g3.POST("/save", recommend.GetResourceBySave)
-	}
-	g4 := g.Group("/api/v1/action")
-	{
-		g4.POST("/browse", action.UpdateUserBrowse)
-		g4.POST("/collect", action.UpdateUserCollect)
-		g4.POST("/like", action.UpdateUserLike)
-		g4.POST("/click", action.UpdateUserClick)
-		g4.POST("/save", action.UpdateUserSave)
-		g4.POST("/search", action.UpdateUserSearch)
-	}
 	g5 := g.Group("/api/v1/parking")
 	{
 

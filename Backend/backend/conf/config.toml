@@ -22,9 +22,9 @@ LogLevel = "DEBUG"
 
 [mysql]
   database = "backend"
-  ip = "127.0.0.1:3319"
-  password = "superroot"
-  user = "superroot"
+  ip = "127.0.0.1:3306"
+  password = "public"
+  user = "root"
 
 [redis]
   ip = "127.0.0.1"
